@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Career Roadmap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --card-bg: #ffffff;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMCwgMCwgMCwgMC4wMikiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2530 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wOCkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            z-index: 0;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        .roadmap-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+        
+        .nav-btn {
+            background: var(--card-bg);
+            border: none;
+            padding: 12px 25px;
+            margin: 0 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .nav-btn i {
+            margin-right: 8px;
+        }
+        
+        /* Progress Tracker */
+        .progress-tracker {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+        
+        .progress-tracker::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: #e0e0e0;
+            transform: translateY(-50%);
+            z-index: 1;
+            border-radius: 3px;
+        }
+        
+        .progress-bar {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 6px;
+            background: var(--secondary);
+            transform: translateY(-50%);
+            z-index: 2;
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-step {
+            position: relative;
+            z-index: 3;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--dark);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 3px solid #e0e0e0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .progress-step.active {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+            transform: scale(1.1);
+        }
+        
+        .progress-step.completed {
+            background: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+        
+        /* Roadmap Container */
+        .roadmap-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: relative;
+        }
+        
+        .roadmap-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            width: 4px;
+            background: var(--secondary);
+            transform: translateX(-50%);
+            z-index: 1;
+            border-radius: 2px;
+        }
+        
+        .roadmap-step {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+            border-left: 5px solid var(--secondary);
+            transition: var(--transition);
+            z-index: 2;
+            overflow: hidden;
+        }
+        
+        .roadmap-step:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-left: 5px solid var(--accent);
+        }
+        
+        .roadmap-step::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(236, 240, 241, 0.05) 100%);
+            z-index: -1;
+        }
+        
+        .roadmap-step h2 {
+            color: var(--dark);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .roadmap-step h2 i {
+            margin-right: 12px;
+            color: var(--secondary);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background: var(--secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+            z-index: 3;
+        }
+        
+        .roadmap-step p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .roadmap-step ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .roadmap-step li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .roadmap-step li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .certification {
+            background: linear-gradient(135deg, #e8f4fc 0%, #d1e9fa 100%);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            color: #2980b9;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid #c5e3fc;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certification:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            color: #1a5276;
+        }
+        
+        .certification i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* Resources Section */
+        .resources-section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 50px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .resources-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark);
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .resources-section h2 i {
+            margin-right: 15px;
+            color: var(--secondary);
+        }
+        
+        .resource-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .resource-card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .resource-card h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .resource-card ul {
+            padding-left: 20px;
+        }
+        
+        .resource-card li {
+            margin-bottom: 10px;
+        }
+        
+        .resource-card a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .resource-card a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: #7f8c8d;
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            z-index: 1000;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Animation Classes */
+        .animate-step {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .roadmap-nav {
+                flex-wrap: wrap;
+            }
+            
+            .nav-btn {
+                margin: 5px;
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .progress-tracker {
+                margin: 30px auto;
+            }
+            
+            .roadmap-container::before {
+                left: 20px;
+            }
+            
+            .roadmap-step {
+                padding: 25px 20px 25px 30px;
+            }
+            
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .resource-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-shield-alt"></i> Cybersecurity Career Roadmap</h1>
+            <p>Your comprehensive guide to building a successful career in cybersecurity</p>
+        </header>
+        
+        <div class="roadmap-nav">
+            <button class="nav-btn" data-step="1"><i class="fas fa-layer-group"></i> Foundational</button>
+            <button class="nav-btn" data-step="2"><i class="fas fa-door-open"></i> Entry-Level</button>
+            <button class="nav-btn" data-step="3"><i class="fas fa-chart-line"></i> Intermediate</button>
+            <button class="nav-btn" data-step="4"><i class="fas fa-crown"></i> Advanced</button>
+        </div>
+        
+        <div class="progress-tracker">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="progress-step active" data-step="1">1</div>
+            <div class="progress-step" data-step="2">2</div>
+            <div class="progress-step" data-step="3">3</div>
+            <div class="progress-step" data-step="4">4</div>
+        </div>
+        
+        <main>
+            <section class="roadmap-container">
+                <div class="roadmap-step animate-step" id="step1">
+                    <div class="step-number">1</div>
+                    <h2><i class="fas fa-layer-group"></i> Foundational Knowledge</h2>
+                    <p>Build your basic understanding of IT and security concepts:</p>
+                    <ul>
+                        <li>Computer networking fundamentals</li>
+                        <li>Operating systems (Windows, Linux)</li>
+                        <li>Basic programming (Python, Bash)</li>
+                        <li>Cybersecurity principles</li>
+                        <li>Security awareness fundamentals</li>
+                        <li>Basic cryptography concepts</li>
+                    </ul>
+                    <div class="certifications">
+                        <div class="certification"><i class="fas fa-certificate"></i> CompTIA ITF+</div>
+                        <div class="certification"><i class="fas fa-certificate"></i> Google IT Support</div>
+                        <div class="certification"><i class="fas fa-certificate"></i> Microsoft Technology Associate</div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-step animate-step" id="step2">
+                    <div class="step-number">2</div>
+                    <h2><i class="fas fa-door-open"></i> Entry-Level Cybersecurity</h2>
+                    <p>Gain core cybersecurity knowledge and skills:</p>
+                    <ul>
+                        <li>Network security fundamentals</li>
+                        <li>Threats, vulnerabilities, and attacks</li>
+                        <li>Security technologies and tools</li>
+                        <li>Incident response basics</li>
+                        <li>Security operations center (SOC) fundamentals</li>
+                        <li>Basic penetration testing concepts</li>
+                    </ul>
+                    <div class="certifications">
+                        <div class="certification"><i class="fas fa-certificate"></i> CompTIA Security+</div>
+                        <div class="certification"><i class="fas fa-certificate"></i> Certified Ethical Hacker (CEH)</div>
+                        <div class="certification"><i class="fas fa-certificate"></i> Cisco CCNA Security</div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-step animate-step" id="step3">
+                    <div class="step-number">3</div>
+                    <h2><i class="fas fa-chart-line"></i> Intermediate Specialization</h2>
+                    <p>Choose your focus area and develop deeper expertise:</p>
+                    <ul>
+                        <li>Penetration Testing & Red Teaming</li>
+                        <li>Security Operations & Blue Teaming</li>
+                        <li>Risk Management & Compliance</li>
+                        <li>Cloud Security Architecture</li>
+                        <li>Digital Forensics & Incident Response</li>
+                        <li>Security Engineering & Architecture</li>
+                    </ul>
+                    <div class="certifications">
+                        <div class="certification"><i class="fas fa-certificate"></i> CompTIA CySA+</div>
+                        <div class="certification"><i class="fas fa-certificate"></i> OSCP</div>
+                        <div class="certification"><i class="fas fa-certificate"></i> CISSP</div>
+                        <div class="certification"><i class="fas fa-certificate"></i> CCSP</div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-step animate-step" id="step4">
+                    <div class="step-number">4</div>
+                    <h2><i class="fas fa-crown"></i> Advanced Cybersecurity</h2>
+                    <p>Master advanced concepts and leadership skills:</p>
+                    <ul>
+                        <li>Security architecture & design</li>
+                        <li>Advanced threat analysis & hunting</li>
+                        <li>Security leadership & management</li>
+                        <li>Governance, risk and compliance</li>
+                        <li>Security program development</li>
+                        <li>Emerging technologies security</li>
+                    </ul>
+                    <div class="certifications">
+                        <div class="certification"><i class="fas fa-certificate"></i> CISSP</div>
+                        <div class="certification"><i class="fas fa-certificate"></i> CISM</div>
+                        <div class="certification"><i class="fas fa-certificate"></i> CCISO</div>
+                        <div class="certification"><i class="fas fa-certificate"></i> SABSA</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="resources-section">
+                <h2><i class="fas fa-book-open"></i> Learning Resources</h2>
+                <div class="resource-cards">
+                    <div class="resource-card">
+                        <h3><i class="fas fa-graduation-cap"></i> Online Courses</h3>
+                        <ul>
+                            <li>Coursera Cybersecurity Specializations</li>
+                            <li>Pluralsight Cybersecurity Paths</li>
+                            <li>Cybrary Free Courses</li>
+                            <li>TryHackMe Learning Paths</li>
+                        </ul>
+                        <a href="#">Explore courses →</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3><i class="fas fa-book"></i> Books & Publications</h3>
+                        <ul>
+                            <li>"The Web Application Hacker's Handbook"</li>
+                            <li>"Practical Malware Analysis"</li>
+                            <li>"CISSP All-in-One Exam Guide"</li>
+                            <li>Krebs on Security Blog</li>
+                        </ul>
+                        <a href="#">View resources →</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3><i class="fas fa-laptop-code"></i> Hands-on Labs</h3>
+                        <ul>
+                            <li>Hack The Box</li>
+                            <li>TryHackMe</li>
+                            <li>PentesterLab</li>
+                            <li>RangeForce</li>
+                        </ul>
+                       <h4>Start Practicing</h4>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Cybersecurity Career Roadmap | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for Future Security Professionals</p>
+        </footer>
+        
+        <div class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation buttons
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const step = button.dataset.step;
+                    scrollToStep(step);
+                    updateProgress(step);
+                });
+            });
+            
+            // Progress steps
+            const progressSteps = document.querySelectorAll('.progress-step');
+            progressSteps.forEach(step => {
+                step.addEventListener('click', () => {
+                    const stepNum = step.textContent;
+                    scrollToStep(stepNum);
+                    updateProgress(stepNum);
+                });
+            });
+            
+            // Back to top button
+            const backToTopBtn = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Certification hover effect
+            const certifications = document.querySelectorAll('.certification');
+            certifications.forEach(cert => {
+                cert.addEventListener('mouseover', function() {
+                    this.style.transform = 'scale(1.05)';
+                    this.style.boxShadow = '0 8px 20px rgba(52, 152, 219, 0.4)';
+                });
+                
+                cert.addEventListener('mouseout', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = '';
+                });
+                
+                // Click to show info
+                cert.addEventListener('click', function() {
+                    const certName = this.textContent.trim();
+                    alert(`Learn more about ${certName} certification:\n\nThis certification validates your skills in a specific cybersecurity domain. Visit the official website for more details.`);
+                });
+            });
+            
+            // Roadmap step hover effect
+            const roadmapSteps = document.querySelectorAll('.roadmap-step');
+            roadmapSteps.forEach(step => {
+                step.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                step.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+            });
+            
+            // Scroll animation for steps
+            function animateStepsOnScroll() {
+                roadmapSteps.forEach(step => {
+                    const stepPosition = step.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if(stepPosition < screenPosition) {
+                        step.style.opacity = '1';
+                        step.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Initial animation
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    roadmapSteps.forEach((step, index) => {
+                        step.style.transitionDelay = `${index * 0.1}s`;
+                        step.classList.add('animate-step');
+                    });
+                }, 300);
+            });
+            
+            window.addEventListener('scroll', animateStepsOnScroll);
+            
+            // Helper functions
+            function scrollToStep(stepNum) {
+                const stepElement = document.getElementById(`step${stepNum}`);
+                if (stepElement) {
+                    stepElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+            
+            function updateProgress(stepNum) {
+                const progressBar = document.getElementById('progressBar');
+                const progress = (stepNum - 1) * 33.33;
+                progressBar.style.width = `${progress}%`;
+                
+                progressSteps.forEach(step => {
+                    step.classList.remove('active', 'completed');
+                    if (parseInt(step.textContent) < stepNum) {
+                        step.classList.add('completed');
+                    } else if (parseInt(step.textContent) == stepNum) {
+                        step.classList.add('active');
+                    }
+                });
+            }
+            
+            // Initialize progress
+            updateProgress(1);
+        });
+    </script>
+</body>
+</html>
